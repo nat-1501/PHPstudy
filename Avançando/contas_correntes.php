@@ -18,6 +18,6 @@ $conta3 = [
 $contasCorrentes = [$conta1, $conta2, $conta3];
 
 for ($i = 0; $i < count($contasCorrentes); $i++ ) {
-    echo $contasCorrentes [$i] ['titular'] . PHP_EOL;
+    echo $contasCorrentes [$i] ['saldo'] . PHP_EOL;
 }
 ?>
