@@ -1,5 +1,15 @@
 <?php
 
+function sacar ($conta, $valorASacar)
+ {
+    if (500 > $contasCorrentes['123.654.878-10'] ['saldo']) {
+        exibeMensagem( mensagem: "Você não pode sacar esse valor");
+    } else {
+        $contasCorrentes['123.654.878-10'] ['saldo'] -= 500;
+    }
+
+}
+
 function exibeMensagem($mensagem) 
 {
     echo $mensagem . PHP_EOL;
@@ -26,6 +36,10 @@ $contasCorrentes = [
 
 
 ];
+
+$contasCorrentes ['123.654.878-10'] = sacar ($contasCorrentes['123.654.878-10'], 500);
+    
+
 
 
 if (500 > $contasCorrentes['123.654.878-10'] ['saldo']) {
