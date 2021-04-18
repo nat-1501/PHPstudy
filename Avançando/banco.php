@@ -1,5 +1,12 @@
 <?php
 
+function depositar ($conta, $valorADepositar) {
+    $conta['saldo'] += $valorADepositar;
+    return $conta;
+
+}
+
+
 function sacar ($conta, $valorASacar)
  {
     if ($valorASacar> $conta['saldo']) {
@@ -40,9 +47,21 @@ $contasCorrentes = [
 
 ];
 
-$contasCorrentes ['123.654.878-10'] = sacar ($contasCorrentes['123.654.878-10'], valorASacar:500);
-$contasCorrentes ['123.654.456-11'] = sacar ($contasCorrentes['123.654.456-11'], valorASacar:500);    
+$contasCorrentes ['123.654.878-10'] = sacar(  
+    $contasCorrentes['123.654.878-10'], 
+    valorASacar:500
+);
+
+$contasCorrentes ['123.654.456-11'] = sacar(
+    $contasCorrentes['123.654.456-11'], 
+    valorASacar:200
+
+);    
   
+$contasCorrentes['132.326.459-12'] = depositar (
+     $contasCorrentes['132.326.459-12'],
+        850
+);
                                                                                                     
 foreach ($contasCorrentes as $cpf => $conta) {
    exibeMensagem ( mensagem: $cpf . "  " . $conta ['titular'] . ' ' . $conta['saldo'] ) ;
