@@ -1,6 +1,7 @@
 <?php
 
-function depositar ($conta, $valorADepositar) {
+function depositar ($conta, $valorADepositar)
+ {
     if ($valorADepositar > 0) {
     $conta['saldo'] += $valorADepositar;
     } else {
@@ -64,7 +65,7 @@ $contasCorrentes ['123.456.789-09'] = sacar(
   
 $contasCorrentes['123.456.789-09'] = depositar (
      $contasCorrentes['123.456.789-09'],
-        1000
+        2000
 );
                                                                                                     
 foreach ($contasCorrentes as $cpf => $conta) {
