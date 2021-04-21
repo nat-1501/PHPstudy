@@ -30,13 +30,13 @@ function transferir ($contaDestinatario,$contaRemetente, $valorATransferir)
 
        $contaRemetente = sacar($contaRemetente, $valorATransferir);
        $contaDestinatario = depositar($contaDestinatario, $valorATransferir); 
-       return array($contaDestinatario, $contaRemetente);
+       return [$contaRemetente,$contaDestinatario];
     }
 
-    function exibeMensagem($mensagem) 
-{
-    echo $mensagem . PHP_EOL;
-}
+function exibeMensagem($mensagem) 
+    {
+        echo $mensagem . PHP_EOL;
+    }
 
 $contasCorrentes = [ 
     '123.456.789-09' => [
@@ -52,20 +52,14 @@ $contasCorrentes = [
 
 
 
+echo  "SALDO ANTES DA TRANSFERENCIA MARIA " . $contasCorrentes['123.654.878-10']['saldo'].PHP_EOL;
+echo  "SALDO ANTES DATRANSFERENCIA MARCIO " . $contasCorrentes['123.456.789-09']['saldo'].PHP_EOL;
 
-$retorno = transferir($contasCorrentes['123.456.789-09'], $contasCorrentes['123.654.878-10'], 500); 
-$contasCorrentes['123.456.789-09'] = $retorno[0];
-$contasCorrentes['123.654.878-10'] = $retorno[1];
+$retorno = transferir($contasCorrentes['123.456.789-09'], $contasCorrentes['123.654.878-10'], 200); 
+$contasCorrentes['123.654.878-10'] = $retorno[0];
+$contasCorrentes['123.456.789-09'] = $retorno[1];
+
 
 
 echo  "SALDO ATUAL MARIA " . $contasCorrentes['123.654.878-10']['saldo'].PHP_EOL;
 echo  "SALDO ATUAL MARCIO " . $contasCorrentes['123.456.789-09']['saldo'].PHP_EOL;
-
-$contasCorrentes ['123.654.878-10'] = sacar(  
-    $contasCorrentes['123.654.878-10'], 
-    valorASacar:500,
-
-
-);
-
-?>
