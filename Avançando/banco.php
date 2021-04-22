@@ -21,9 +21,9 @@ $contasCorrentes = [
         'saldo' => 100
     ]
 
-
-
 ];
+
+unset ($contasCorrentes['123.654.456-11']);
 
 $contasCorrentes ['123.654.878-10'] = sacar(  
     $contasCorrentes['123.654.878-10'], 
