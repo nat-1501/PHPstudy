@@ -11,7 +11,7 @@ echo maior ([30, 50, 10.5]) . PHP_EOL;
         for ($i = 0; $i < count($pacotes); $i++){
 
             if ($pacotes[$i] > $ultimoPeso) {
-                $ultimoPeso = $pacotes[$i];
+                $ultimoPeso = $pacotes [$i];
             }
     
 
