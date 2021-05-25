@@ -1,20 +1,15 @@
 <?php
 
-$array = [
-    "1" => "Nome",
-    "2" => "Endereco",
-    "3" => "Telefone",
-    "4" => "CEP", 
-    "5" => "CPF"
-
-];
-
-
-var_dump($array);
+for ($contador = 0; $contador <= 10; $contador++) {
+    echo "5 x $contador = " . ($contador*5) . "\n";
+}
 
 echo "<hr>";
 
-echo $array['1']; 
+$cores = array ("Verde", "Vermelho", "Azul");
 
 
+foreach ($cores as $valor); {
+    
+}
 ?>
